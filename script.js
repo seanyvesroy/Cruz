@@ -5,7 +5,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
       target.scrollIntoView({ behavior: 'smooth' });
     });
   });
-  const API_KEY = 'your-yelp-api-key'; // Replace with your actual Yelp API key
+const API_KEY = 'your-yelp-api-key'; // Replace with your actual Yelp API key
 const BUSINESS_ID = 'cruz-integrated-systems-costa-mesa-2'; // Replace with your Yelp business ID
 
 async function fetchYelpReviews() {
