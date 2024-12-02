@@ -41,15 +41,32 @@
   }
   
   #home {
-    background: url('home-background.jpg') center/cover no-repeat;
+    position: relative;
+    background: url('images/another_outside_camera.jpg') center/cover no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     text-align: center;
+    padding: 0 20px;
   }
   
- #testimonials {
-    background: #f4f4f4;
-    margin-top: 5px;
+  .home-content {
+    background: rgba(0, 0, 0, 0.5); /* Transparent background for text */
+    padding: 20px;
+    border-radius: 8px;
   }
+  
+  #home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  #home p {
+    font-size: 1.2rem;
+  }
+
   #services {
     background: #f9f9f9;
     text-align: center;
@@ -97,6 +114,37 @@
     color: #666;
   }
   
+  #testimonials {
+    background: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  #testimonials h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .review {
+    background: #fff;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+  }
+  
+  .review p {
+    margin: 0 0 10px;
+    color: #555;
+  }
+  
+  .review strong {
+    color: #333;
+  }
+  
+
   #contact {
     background: #f9f9f9;
     padding: 50px 20px;
