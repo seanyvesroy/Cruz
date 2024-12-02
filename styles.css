@@ -46,8 +46,139 @@
     text-align: center;
   }
   
-  #services, #testimonials, #contact {
+ #testimonials {
     background: #f4f4f4;
     margin-top: 5px;
+  }
+  #services {
+    background: #f9f9f9;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  #services h2 {
+    margin-bottom: 20px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .service-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .service-item h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .service-item p {
+    padding: 0 15px 20px;
+    color: #666;
+  }
+  
+  #contact {
+    background: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    background: #0056b3;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .info-item i {
+    font-size: 1.5rem;
+    color: #007BFF;
+  }
+  
+  .info-item p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .info-item a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .info-item a:hover {
+    text-decoration: underline;
   }
   
