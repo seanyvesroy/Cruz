@@ -5,16 +5,22 @@ const menubar = document.querySelector(".menubar");
 const menuItems = document.querySelector(".menubar ul li a")
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    // Close the menubar and remove the active hamburger state
+    menubar.classList.remove("active");
+    hamburger.classList.remove("hamburger-active");
+
+    // Delay the scrolling by 0.5 seconds (500ms)
+    setTimeout(() => {
       document.querySelector(this.getAttribute('href')).scrollIntoView({
         behavior: 'smooth',
         block: 'start' // Ensures the section is aligned at the top
       });
-      menubar.classList.remove("active"); // Remove active class to close the menubar
-      hamburger.classList.remove("hamburger-active"); 
-    });
+    }, 350); // 500ms delay
   });
+});
 // Toggle the active class to show the menubar
 hamburger.addEventListener("click", () => {
   menubar.classList.toggle("active");
