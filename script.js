@@ -37,3 +37,17 @@ hamburger.addEventListener("click", () => {
     body.classList.remove("no-scroll");
   }
 });
+function toggleService(serviceItem) {
+  const image = serviceItem.querySelector("img");
+  const description = serviceItem.querySelector(".service-description");
+
+  if (image.style.display === "none") {
+    // Show the image and hide the description
+    image.style.display = "block";
+    description.style.display = "none";
+  } else {
+    // Hide the image and show the description
+    image.style.display = "none";
+    description.style.display = "block";
+  }
+}
