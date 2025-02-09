@@ -42,7 +42,7 @@
   
   #home {
     position: relative;
-    background: url('images/unnamed.jpg') center/cover no-repeat;
+    background: url('images/unnamed1.jpg') center/cover no-repeat;
     height: 100vh; /* Full viewport height */
     display: flex;
     align-items: center;
