@@ -508,4 +508,21 @@
   .info-item a:hover {
     text-decoration: underline;
   }
+  .yelp-button {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .yelp-logo {
+    width: 120px; /* Adjust size */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .yelp-logo:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
   
