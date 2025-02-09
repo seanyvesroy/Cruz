@@ -29,14 +29,11 @@ nav {
 
 .logo-container {
   flex: 1; /* Allow the logo to take available space */
-  display: flex;
-  justify-content: flex-start; /* Align logo to the left */
 }
 
 .logo {
-  max-height: 60px; /* Adjust max-height for logo scaling */
+  max-height: 50px; /* Limit logo height */
   width: auto; /* Maintain aspect ratio */
-  transition: max-height 0.3s ease; /* Smooth transition for scaling */
 }
 
 .nav-links {
@@ -64,7 +61,7 @@ nav {
   content: '';
   width: 0;
   height: 3px;
-  background: #ff004f; /* Red underline color */
+  background: #008cff; /* Red underline color */
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -97,12 +94,7 @@ nav {
   .logo-container {
     flex: none; /* Remove logo flex-grow so it stays at a fixed size */
   }
-
-  .logo {
-    max-height: 50px; /* Adjust logo size for smaller screens */
-  }
 }
-
 
   
   section {
