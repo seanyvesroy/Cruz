@@ -179,7 +179,6 @@
     padding: 100px 20px;
     min-height: 100vh;
   }
-  
   #home {
     position: relative;
     background: url('images/unnamed1.jpg') center/cover no-repeat;
@@ -190,6 +189,18 @@
     color: #fff;
     text-align: center;
     padding: 0 20px;
+  }
+  
+  @media (max-width: 768px) {
+    #home {
+      background: url('images/unnamed1.jpg') left/cover no-repeat; /* Focus on the left side */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #home {
+      background: url('images/unnamed1.jpg') right/cover no-repeat; /* Focus on the right side for even smaller screens */
+    }
   }
   
   .home-content {
@@ -347,15 +358,17 @@
     font-size: 0.95rem;
     color: #555;
     margin-bottom: 15px;
+    margin-top: 15px;
   }
   
   .review ul {
     display: grid; /* Use a grid for better layout control */
-    grid-template-columns: repeat(4, 1fr); /* Four images per row */
-    gap: 5px; /* Reduce the gap between images */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive grid: min width of 80px, auto-expand */
+    gap: 10px; /* Increase gap for better spacing */
     padding: 0;
     list-style: none;
     margin-top: 10px;
+    max-width: 100%; /* Ensure the grid stays within the container */
   }
   
   .review li {
@@ -363,7 +376,7 @@
   }
   
   .review-image {
-    width: 100%;
+    width: 100%; /* Ensures the image fills the grid cell */
     height: auto;
     border-radius: 6px;
     object-fit: cover;
@@ -375,14 +388,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Light shadow for emphasis */
   }
   
-  
-  
-  @media (max-width: 1200px) {
-    .review-container {
-      gap: 20px;
-    }
-  }
-  
   @media (max-width: 768px) {
     .review-container {
       flex-direction: column; /* Stack reviews vertically on smaller screens */
@@ -390,15 +395,21 @@
     }
   
     .review ul {
-      justify-content: center; /* Center images in smaller screens */
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Adjust for smaller screens */
+      justify-content: center; /* Center images on smaller screens */
     }
   }
   
   @media (max-width: 480px) {
+    .review ul {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* Further adjust for very small screens */
+    }
+  
     .review-image {
-      width: 80px; /* Adjust image size for smaller screens */
+      width: 100%; /* Adjust image size dynamically */
     }
   }
+  
   
   
 
