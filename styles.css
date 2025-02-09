@@ -25,14 +25,14 @@
     box-sizing: border-box;  /* Ensures padding doesn't affect the width */ /* Ensures padding doesn't affect the width */
   }
   nav .logo {
+    flex: 1; /* Allow the logo to take available space */
     display: flex;
-    align-items: center;
-    flex: 1;
+    justify-content: flex-start; /* Align logo to the left */
   }
   nav .logo img {
-    height: 30px;
-    width: auto;
-    margin-right: 10px;
+    max-height: 40px; /* Adjust max-height for logo scaling */
+    width: auto; /* Maintain aspect ratio */
+    transition: max-height 0.3s ease; /* Smooth transition for scaling */
   }
   
   nav ul {
