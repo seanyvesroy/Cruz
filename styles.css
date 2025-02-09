@@ -199,7 +199,7 @@
   
   @media (max-width: 480px) {
     #home {
-      background: url('images/unnamed1.jpg') right/cover no-repeat; /* Focus on the right side for even smaller screens */
+      background: url('images/unnamed1.jpg') center/cover no-repeat; /* Focus on the right side for even smaller screens */
     }
   }
   
