@@ -131,9 +131,13 @@
   .menubar ul {
     padding: 0;
     list-style: none;
+    text-align: center;
   }
   .menubar ul li {
     margin-bottom: 32px;
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     position: relative; /* Required for positioning the underline */
   }
   
@@ -145,6 +149,8 @@
     position: relative;
     display: inline-block;
     padding: 5px 0;
+    text-align: center; /* Center the text within the link */
+    width: 100%; 
   }
   
   .menubar ul li a::after {
@@ -162,7 +168,12 @@
     width: 100%; /* Underline grows to full width on hover */
   }
   
-  
+  /* Prevent scrolling when the menubar is open */
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh; /* Lock the height to prevent scrolling */
+  }
+
   
   @media screen and (max-width: 790px) {
     .hamburger {
