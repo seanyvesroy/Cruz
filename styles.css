@@ -10,92 +10,168 @@
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+}
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;  /* Adjust padding to make it flexible */
+    background-color: #000; /* Navbar background color */
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;  /* Ensures padding doesn't affect the width */ /* Ensures padding doesn't affect the width */
+  }
+  nav .logo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  nav .logo img {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
   }
   
-/* Navbar Styles */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;  /* Adjust padding to make it flexible */
-  background-color: #000; /* Navbar background color */
-  color: #fff;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-sizing: border-box;  /* Ensures padding doesn't affect the width */
-}
-
-.logo-container {
-  flex: 1; /* Allow the logo to take available space */
-}
-
-.logo {
-  max-height: 50px; /* Limit logo height */
-  width: auto; /* Maintain aspect ratio */
-}
-
-.nav-links {
-  list-style-type: none;
-  display: flex;
-  gap: 20px; /* Space between links */
-  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
-}
-
-.nav-links li {
-  position: relative; /* Required for positioning the underline */
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  position: relative;
-  display: inline-block;
-  padding: 5px 0; /* Padding to space out the text from the underline */
-}
-
-.nav-links li a::after {
-  content: '';
-  width: 0;
-  height: 3px;
-  background: #008cff; /* Red underline color */
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  transition: width 0.3s ease;
-}
-
-.nav-links li a:hover::after {
-  width: 100%; /* Underline grows to full width on hover */
-}
-
-/* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
-  .nav-links {
-    justify-content: center; /* Center the nav items on smaller screens */
-    gap: 15px; /* Reduce space between links on small screens */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
   }
-}
+  nav ul li {
+    margin-left: 1.5rem;
+    position: relative; /* Required for positioning the underline */
 
-@media (max-width: 480px) {
-  .nav-links {
-    flex-direction: column; /* Stack the nav items vertically on very small screens */
-    align-items: center; /* Center align the items vertically */
-    gap: 10px; /* Reduce space between links further */
   }
-
-  nav {
-    padding: 10px; /* Less padding on smaller screens */
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
   }
-
-  .logo-container {
-    flex: none; /* Remove logo flex-grow so it stays at a fixed size */
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #008cff; /* Red underline color */
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease;
   }
-}
-
+  
+  nav ul li a:hover::after {
+    width: 100%; /* Underline grows to full width on hover */
+  }
+  
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 1px;
+    background-color: #fff;
+    display: block;
+    margin: 7px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .hamburger-active {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+  }
+  
+  .hamburger-active .line:nth-child(2) {
+    width: 0px;
+  }
+  
+  .hamburger-active .line:nth-child(1),
+  .hamburger-active .line:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  .hamburger-active .line:nth-child(1) {
+    transform: translateY(12px);
+  }
+  
+  .hamburger-active .line:nth-child(3) {
+    transform: translateY(-5px) rotate(90deg);
+  }
+  
+  .menubar {
+    position: absolute;
+    top: 0;
+    left: -60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    height: 100vh;
+    padding: 20% 0;
+    background: #000;
+    transition: all 0.5s ease-in;
+    z-index: 2;
+  }
+  .active {
+    left: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  
+  .menubar ul {
+    padding: 0;
+    list-style: none;
+  }
+  .menubar ul li {
+    margin-bottom: 32px;
+    position: relative; /* Required for positioning the underline */
+  }
+  
+  .menubar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+  }
+  
+  .menubar ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #008cff; /* Red underline color */
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.3s ease;
+  }
+  
+  .menubar ul li a:hover::after {
+    width: 100%; /* Underline grows to full width on hover */
+  }
+  
+  
+  
+  @media screen and (max-width: 790px) {
+    .hamburger {
+      display: block;
+    }
+    nav ul {
+      display: none;
+    }
+  }
+  
   
   section {
     padding: 100px 20px;
