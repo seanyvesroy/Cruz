@@ -109,23 +109,24 @@
   }
   
   .menubar {
-    position: absolute;
-    top: 0;
-    left: -60%;
+    position: absolute; /* Now absolute instead of fixed */
+    left: -100%; /* Initially off-screen */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 60%;
+    width: 100%;
     height: 100vh;
     padding: 20% 0;
     background: #000;
     transition: all 0.5s ease-in;
     z-index: 2;
   }
+  
   .active {
-    left: 0;
+    left: 0; /* Slide in when active */
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
+  
   
   .menubar ul {
     padding: 0;
