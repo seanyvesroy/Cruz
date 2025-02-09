@@ -42,7 +42,7 @@
   
   #home {
     position: relative;
-    background: url('images/another_outside_camera.jpg') center/cover no-repeat;
+    background: url('images/unnamed.jpg') center/cover no-repeat;
     height: 100vh; /* Full viewport height */
     display: flex;
     align-items: center;
@@ -118,6 +118,7 @@
     background: #f9f9f9;
     padding: 50px 20px;
     text-align: center;
+    
   }
   
   #testimonials h2 {
@@ -126,23 +127,139 @@
     color: #333;
   }
   
+  .review-container {
+    display: flex; /* Flexbox to center the review container */
+    justify-content: center; /* Center content horizontally */
+    flex-wrap: wrap; /* Allows wrapping for responsive design */
+    gap: 20px; /* Space between reviews */
+    margin-top: 30px;
+  }
+  
   .review {
     background: #fff;
-    margin: 15px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    text-align: left;
+    max-width: 66%; /* Limit the width of the review for readability */
+    width: 100%;
   }
   
-  .review p {
-    margin: 0 0 10px;
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .reviewer-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .reviewer-info {
+    font-size: 0.9rem;
     color: #555;
   }
   
-  .review strong {
-    color: #333;
+  .reviewer-name {
+    font-weight: bold;
+    margin-bottom: 5px;
   }
+  
+  .reviewer-location {
+    font-size: 0.85rem;
+    color: #888;
+  }
+  
+  .star-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #d32323; /* Yelp red color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px; /* Center the star vertically */
+    text-align: center; /* Center the star horizontally */
+    border-radius: 3px; /* Slightly rounded corners */
+  }
+  
+  .review-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between the stars and the date */
+  }
+  
+  .review-rating .star-box + .star-box {
+    margin-left: -2px; /* Slight overlap for stars to appear close */
+  }
+  
+  .review-date {
+    font-size: 0.8rem;
+    color: #000; /* Black date text */
+  }
+  
+  
+  .review-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .review ul {
+    display: grid; /* Use a grid for better layout control */
+    grid-template-columns: repeat(4, 1fr); /* Four images per row */
+    gap: 5px; /* Reduce the gap between images */
+    padding: 0;
+    list-style: none;
+    margin-top: 10px;
+  }
+  
+  .review li {
+    display: block;
+  }
+  
+  .review-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  }
+  
+  .review-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Light shadow for emphasis */
+  }
+  
+  
+  
+  @media (max-width: 1200px) {
+    .review-container {
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .review-container {
+      flex-direction: column; /* Stack reviews vertically on smaller screens */
+      align-items: center;
+    }
+  
+    .review ul {
+      justify-content: center; /* Center images in smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .review-image {
+      width: 80px; /* Adjust image size for smaller screens */
+    }
+  }
+  
   
 
   #contact {
